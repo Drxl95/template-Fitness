@@ -4,6 +4,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@mixin hoverCard {
+  &:hover,
+  &:focus {
+    transform: translateY(-1rem) scale(1.05);
+    transition: transform 150ms linear;
+  }
+}
+@mixin clickTranslate {
+  &:active {
+    transform: translateY(0.15rem);
+    transition: transform 150ms linear;
+  }
+}
 
 //MEDIA QUERY MANAGER
 /*
@@ -11,7 +24,7 @@
 000 - 600px:    normal styles
 600 - 900px:    Tablet portrait
 900 - 1200px:   Tablet Landscape
-1200px - 1800px  Laptop/Desktop
+1200px - 1800px:  Laptop/Desktop
 1800px + :      Big Desktop
 
   $breakpoint argument choices

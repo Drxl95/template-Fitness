@@ -5,10 +5,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/app.css" id="clay-css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Roboto&display=swap" rel="stylesheet">
     <title>Fitness</title>
 </head>
 
-<body>
+<!--8-COLUMN GRID SYSTEM-->
+
+<body class="grid">
+
+    <nav class="top-nav">
+        <div class="logo">
+            <a href="#">
+                <img src="./img/logo.svg" alt="logo-img" title="Home">
+            </a>
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Home</a></li>
+            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">About Us</a></li>
+            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Our Services</a></li>
+            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Meet the Team</a></li>
+            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Contact</a></li>
+            <!--Social-->
+            <div class="social">
+                <a href="#" class="facebook"></a>
+                <a href="#" class="youtube"></a>
+                <a href="#" class="instagram"></a>
+                <a href="#" class="twitter"></a>
+            </div>
+        </ul>
+    </nav>
+
+    <!--HEADER-->
+    <header class="header">
+        <div class="bg-video">
+            <video class="bg-video__content" autoplay muted loop>
+                <source src="media/fitness-bg.mp4" type="video/mp4">
+                <source src="media/fitness-bg.webm" type="video/webm">
+                Your browser is not supported!
+            </video>
+        </div>
+        <div class="header__text-container">
+            <h1 class="header__title">FitnessPlex</h1>
+            <h4 class="header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid.</h2>
+                <a href="#" class="btn btn--animated btn--white btn--main">Get Started</a>
+    </header>
+
+    <!--ABOUT SECTION-->
+    <div class="boxes">
+        <div class="boxes__container">
+            <div class="box-container box-container--weights">
+                <div class="box-container__content">
+                    <h3 class="box-container__title">Fitness Gyms</h3>
+                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ea
+                        sequi nobis iure quas architecto, consequatur ex rerum qui sapiente.</p>
+                </div>
+            </div>
+            <div class="box-container box-container--pool">
+                <div class="box-container__content">
+                    <h3 class="box-container__title">Swim Classes</h3>
+                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                        maiores
+                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
+                </div>
+            </div>
+            <div class="box-container box-container--mma">
+                <div class="box-container__content">
+                    <h3 class="box-container__title">Mixed Martial Arts.</h3>
+                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                        maiores
+                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
+                </div>
+            </div>
+            <div class="box-container box-container--yoga">
+                <div class="box-container__content">
+                    <h3 class="box-container__title">Hot Yoga</h3>
+                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                        maiores
+                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="/js/main.js" id="clay-js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </body>
 

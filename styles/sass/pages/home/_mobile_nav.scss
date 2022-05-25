@@ -1,0 +1,112 @@
+@use "../../abstracts/variables" as var;
+@use "../../abstracts/clay_variables" as cv;
+@use "../../abstracts/mixins" as mix;
+@use "../../layout/main_grid" as grid;
+
+.top-nav {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0 1rem;
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    align-items: center;
+    height: 5rem;
+    padding: 0.5rem;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    &:first-child {
+      border-top: 1px solid var.$color-grey-light-2;
+    }
+  }
+  #menu-toggle {
+    display: none;
+  }
+  .menu-button-container {
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 6.5rem;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-inline-start: 0;
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: cv.$main-color;
+    background-color: #fff;
+    overflow: hidden;
+    a {
+      text-decoration: none;
+      font-family: cv.$main-font;
+      color: cv.$secondary-color;
+      font-weight: 600;
+      font-size: 2rem;
+      @include mix.clickTranslate;
+    }
+    &:focus,
+    &:active {
+      background-color: cv.$main-color;
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: cv.$main-color;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+}

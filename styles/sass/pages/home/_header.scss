@@ -1,0 +1,61 @@
+@use "../../abstracts/clay_variables" as abs;
+@use "../../abstracts/variables" as var;
+@use "../../abstracts/mixins" as mix;
+@use "../../layout/main_grid" as grid;
+@use "../../components/button" as btn;
+
+.header {
+  grid-column: full-start / full-end;
+  font-family: abs.$main-font;
+  background-image: url("../../../../img/workout-girl.png"),
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  min-height: 70vh;
+  background-position: center;
+  background-size: cover;
+  // z-index: -1;
+  .bg-video {
+    display: none;
+  }
+  @include mix.respond(tab-portrait) {
+    background-image: none;
+  }
+  @include mix.respond(tab-portrait) {
+    .bg-video {
+      display: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 70vh;
+      width: 100%;
+      overflow: hidden;
+      z-index: -1;
+      &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__text-container {
+    margin-top: 43vh;
+    margin-left: 1rem;
+    .header__title {
+      margin-bottom: 1rem;
+      color: #fff;
+      font-size: 4rem;
+    }
+    .header__subtitle {
+      color: #fff;
+      font-weight: 300;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      color: #fff;
+    }
+    .btn {
+      margin-bottom: 1rem;
+    }
+  }
+}

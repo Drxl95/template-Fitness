@@ -1,11 +1,16 @@
-@use "abstracts/clay_variables";
-@use "abstracts/mixins";
-@use "abstracts/variables";
+// @use "abstracts/mixins";
+// @use "abstracts/variables";
 
-@use "base/animations";
-@use "base/base";
-@use "base/utilities";
+// @use "base/animations";
+// @use "./base/base";
+// @use "base/utilities";
 
-@use "components/";
+// @use "layout/_main_grid";
 
-@use "layout/";
+@use "pages/home/mobile_nav";
+@use "pages/home/header";
+@use "pages/home/about-section.scss";
+
+@use "./components/button";
+@use "./base/base";
+// @use "layout";

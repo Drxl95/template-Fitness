@@ -1,19 +1,345 @@
-/* Error: The default namespace "" is not a valid Sass identifier.
- * 
- * Recommendation: add an "as" clause to define an explicit namespace.
- *   ,
- * 9 | @use "components/";
- *   | ^^^^^^^^^^^^^^^^^^
- *   '
- *   app.scss 9:1  root stylesheet */
+/*
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: The default namespace "" is not a valid Sass identifier.\a\aRecommendation: add an "as" clause to define an explicit namespace.\a   \2577 \a 9 \2502  @use "components/";\d\a   \2502  ^^^^^^^^^^^^^^^^^^\a   \2575 \a   app.scss 9:1  root stylesheet';
+000 - 600px:    normal styles
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet Landscape
+1200px - 1800px:  Laptop/Desktop
+1800px + :      Big Desktop
+
+  $breakpoint argument choices
+
+  -tablet-portrait
+  -tablet-landscape
+  -laptop-desktop
+  -big-desktop
+
+  1em = 16px
+  */
+.grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+
+.top-nav {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0 1rem;
+}
+.top-nav #menu-toggle ~ .menu li {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.top-nav #menu-toggle:checked ~ .menu li {
+  align-items: center;
+  height: 5rem;
+  padding: 0.5rem;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.top-nav #menu-toggle:checked ~ .menu li:first-child {
+  border-top: 1px solid #aaa;
+}
+.top-nav #menu-toggle {
+  display: none;
+}
+.top-nav .menu-button-container {
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.top-nav .menu {
+  position: absolute;
+  top: 0;
+  margin-top: 6.5rem;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-inline-start: 0;
+}
+.top-nav .menu > li {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5em 0;
+  width: 100%;
+  color: #c91919;
+  background-color: #fff;
+  overflow: hidden;
+}
+.top-nav .menu > li a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #4b4b4b;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.top-nav .menu > li a:active {
+  transform: translateY(0.15rem);
+  transition: transform 150ms linear;
+}
+.top-nav .menu > li:focus, .top-nav .menu > li:active {
+  background-color: #c91919;
+}
+.top-nav .menu > li:focus a, .top-nav .menu > li:active a {
+  color: #fff;
+}
+.top-nav .menu-button,
+.top-nav .menu-button::before,
+.top-nav .menu-button::after {
+  display: block;
+  background-color: #c91919;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+.top-nav .menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+.top-nav .menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+.top-nav #menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+.top-nav #menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+.top-nav #menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.btn, .btn:link, .btn:visited {
+  padding: 1.5rem 5rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  background: #c91919;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn--main {
+  background: #c91919;
+}
+.btn--white {
+  color: #54483a;
+}
+.btn--white::after {
+  background-color: #c91919;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+.header {
+  grid-column: full-start/full-end;
+  font-family: "Roboto", sans-serif;
+  background-image: url("../../../../img/workout-girl.png"), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  min-height: 70vh;
+  background-position: center;
+  background-size: cover;
+}
+.header .bg-video {
+  display: none;
+}
+@media only screen and (min-width: 37.5em) {
+  .header {
+    background-image: none;
+  }
+}
+@media only screen and (min-width: 37.5em) {
+  .header .bg-video {
+    display: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .header .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.header__text-container {
+  margin-top: 43vh;
+  margin-left: 1rem;
+}
+.header__text-container .header__title {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 4rem;
+}
+.header__text-container .header__subtitle {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.header__text-container p {
+  color: #fff;
+}
+.header__text-container .btn {
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 66px;
+}
+
+.boxes {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  display: grid;
+  grid-column: col-start/col-end 8;
+}
+.boxes .boxes__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 5rem;
+}
+.boxes .boxes__container .box-container {
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 450px;
+  transition: transform 150ms linear;
+}
+.boxes .boxes__container .box-container--weights {
+  background-image: linear-gradient(328deg, rgba(168, 1, 1, 0.774) 0%, rgba(8, 8, 8, 0.541) 50%), url("../../../img/gym-coronavirus.webp");
+  background-position: center;
+  background-size: cover;
+}
+.boxes .boxes__container .box-container--pool {
+  background-image: linear-gradient(328deg, rgba(12, 167, 146, 0.774) 0%, rgba(8, 8, 8, 0.541) 50%), url("../../../img/swim.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.boxes .boxes__container .box-container--mma {
+  background-image: linear-gradient(228deg, rgba(109, 103, 103, 0.774) 0%, rgba(34, 34, 34, 0.541) 50%), url("../../../img/mma.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.boxes .boxes__container .box-container--yoga {
+  background-image: linear-gradient(298deg, rgba(182, 134, 63, 0.774) 0%, rgba(73, 61, 29, 0.589) 50%), url("../../../img/hot-yoga.webp");
+  background-position: center;
+  background-size: cover;
+}
+.boxes .boxes__container .box-container:hover:hover, .boxes .boxes__container .box-container:hover:focus, .boxes .boxes__container .box-container:focus:hover, .boxes .boxes__container .box-container:focus:focus {
+  transform: translateY(-1rem) scale(1.05);
+  transition: transform 150ms linear;
+}
+.boxes .boxes__container .box-container__content {
+  padding: 3rem 2rem;
+  color: #fff;
+}
+.boxes .boxes__container .box-container__content .box-container__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.boxes .boxes__container .box-container__content .box-container__text {
+  font-size: 1.6rem;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 37.5em) {
+  html {
+    font-size: 68.75%;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (min-width: 75em) {
+  html {
+    font-size: 81.25%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*# sourceMappingURL=app.css.map */

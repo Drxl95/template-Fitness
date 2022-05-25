@@ -1,0 +1,86 @@
+@use "../layout/main_grid";
+@use "../abstracts/variables" as var;
+@use "../abstracts/clay_variables" as abs;
+@use "../abstracts/mixins" as mix;
+
+img {
+  width: 66px;
+}
+.boxes {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  display: grid;
+  grid-column: col-start / col-end 8;
+  .boxes__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 5rem;
+    .box-container {
+      border-radius: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 450px;
+      transition: transform 150ms linear;
+      &--weights {
+        background-image: linear-gradient(
+            328deg,
+            rgba(168, 1, 1, 0.774) 0%,
+            rgba(8, 8, 8, 0.541) 50%
+          ),
+          url("../../../img/gym-coronavirus.webp");
+        background-position: center;
+        background-size: cover;
+      }
+      &--pool {
+        background-image: linear-gradient(
+            328deg,
+            rgba(12, 167, 146, 0.774) 0%,
+            rgba(8, 8, 8, 0.541) 50%
+          ),
+          url("../../../img/swim.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+      &--mma {
+        background-image: linear-gradient(
+            228deg,
+            rgba(109, 103, 103, 0.774) 0%,
+            rgba(34, 34, 34, 0.541) 50%
+          ),
+          url("../../../img/mma.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+      &--yoga {
+        background-image: linear-gradient(
+            298deg,
+            rgba(182, 134, 63, 0.774) 0%,
+            rgba(73, 61, 29, 0.589) 50%
+          ),
+          url("../../../img/hot-yoga.webp");
+        background-position: center;
+        background-size: cover;
+      }
+      &:hover,
+      &:focus {
+        @include mix.hoverCard;
+      }
+
+      &__content {
+        padding: 3rem 2rem;
+        color: #fff;
+
+        .box-container__title {
+          font-family: abs.$main-font;
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+        .box-container__text {
+          font-size: var.$default-font-size;
+          font-family: abs.$secondary-font;
+        }
+      }
+    }
+  }
+}
