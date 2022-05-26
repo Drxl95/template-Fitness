@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/clay_variables" as cv;
 @use "../base/animations" as ani;
+@use "../abstracts/mixins" as mix;
 .btn {
   &,
   &:link,
@@ -61,5 +62,36 @@
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
+  }
+}
+.btn-small {
+  &,
+  &:link,
+  &:visited {
+    background-color: cv.$main-color;
+    padding: 1.25rem 4rem;
+    border-radius: 10rem;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: cv.$secondary-font;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    @include mix.clickTranslate;
+  }
+}
+
+.btn--secondary {
+  border: cv.$main-color solid 1px;
+  background-color: #fff;
+  color: cv.$main-color !important;
+  &:hover {
+    background-color: cv.$main-color;
+    color: #fff !important;
   }
 }

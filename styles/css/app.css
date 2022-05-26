@@ -189,6 +189,37 @@
   animation-fill-mode: backwards;
 }
 
+.btn-small, .btn-small:link, .btn-small:visited {
+  background-color: #c91919;
+  padding: 1.25rem 4rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.btn-small:active, .btn-small:link:active, .btn-small:visited:active {
+  transform: translateY(0.15rem);
+  transition: transform 150ms linear;
+}
+
+.btn--secondary {
+  border: #c91919 solid 1px;
+  background-color: #fff;
+  color: #c91919 !important;
+}
+.btn--secondary:hover {
+  background-color: #c91919;
+  color: #fff !important;
+}
+
 .header {
   grid-column: full-start/full-end;
   font-family: "Roboto", sans-serif;
@@ -295,14 +326,58 @@ img {
   padding: 3rem 2rem;
   color: #fff;
 }
-.boxes .boxes__container .box-container__content .box-container__title {
+.boxes .boxes__container .box-container__title {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.boxes .boxes__container .box-container__content .box-container__text {
+.boxes .boxes__container .box-container__text {
   font-size: 1.6rem;
   font-family: "IBM Plex Sans", sans-serif;
+}
+
+.about {
+  grid-column: 1/-1;
+  margin-bottom: 8rem;
+}
+.about__pictures {
+  padding: 6rem 3rem;
+  background: #c91919;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+}
+.about__pictures .img1 {
+  width: 80%;
+  grid-column: 1/5;
+  grid-row: 1/5;
+  z-index: 30;
+}
+.about__pictures .img2 {
+  width: 120%;
+  grid-column: 3/6;
+  grid-row: 4/6;
+}
+.about__text {
+  grid-column: col-start/col-end 8;
+  margin-bottom: 8rem;
+}
+.about__title {
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 1rem;
+}
+.about__subtitle {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 3rem;
+}
+.about__description {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.about__button {
+  margin-top: 2rem;
 }
 
 *,

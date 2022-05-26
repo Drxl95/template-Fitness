@@ -70,16 +70,15 @@ img {
       &__content {
         padding: 3rem 2rem;
         color: #fff;
-
-        .box-container__title {
-          font-family: abs.$main-font;
-          font-size: 2rem;
-          margin-bottom: 1rem;
-        }
-        .box-container__text {
-          font-size: var.$default-font-size;
-          font-family: abs.$secondary-font;
-        }
+      }
+      &__title {
+        font-family: abs.$main-font;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      &__text {
+        font-size: var.$default-font-size;
+        font-family: abs.$secondary-font;
       }
     }
   }
