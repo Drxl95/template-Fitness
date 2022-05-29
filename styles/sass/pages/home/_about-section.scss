@@ -7,7 +7,7 @@
   grid-column: 1 / -1;
   &__pictures {
     margin-bottom: 8rem;
-    padding: 6rem 3rem;
+    padding: 4.5rem 3rem;
     background: cv.$main-color;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -19,7 +19,7 @@
       z-index: 30;
     }
     .img2 {
-      width: 120%;
+      width: 130%;
       grid-column: 3 / 6;
       grid-row: 4 / 6;
     }
