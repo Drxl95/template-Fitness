@@ -1,0 +1,59 @@
+@use "../../components/about-cards";
+@use "../../abstracts/variables" as var;
+@use "../../abstracts/clay_variables" as cv;
+
+.team-section {
+  grid-column: 1 / -1;
+  background-image: linear-gradient(
+      rgba($color: cv.$main-color-dark, $alpha: 0.45),
+      rgba($color: cv.$main-color-dark, $alpha: 0.45)
+    ),
+    url("../../../../img/abstract.jpg");
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__text {
+    color: #fff;
+    width: 100%;
+    padding: 3rem;
+  }
+  &__title {
+    font-size: 3rem;
+    color: #fff;
+    font-family: cv.$main-font;
+  }
+  &__descr {
+    font-family: cv.$secondary-font;
+    font-size: var.$default-font-size;
+  }
+  &__img-container {
+    // position: relative;
+  }
+  &__img {
+    position: relative;
+
+    .team-img {
+      position: absolute;
+      overflow: hidden;
+      &--1 {
+        width: 15rem;
+        left: 1rem;
+        bottom: -27rem;
+      }
+      &--2 {
+        width: 17rem;
+        left: 20rem;
+        bottom: -27.25rem;
+      }
+      &--3 {
+        width: 20rem;
+        left: 8rem;
+        top: 3rem;
+      }
+    }
+  }
+}

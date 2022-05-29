@@ -19,7 +19,7 @@
     <nav class="top-nav">
         <div class="logo">
             <a href="#">
-                <img src="./img/logo.svg" alt="logo-img" title="Home">
+                <img class="logo" src="./img/logo.svg" alt="logo-img" title="Home">
             </a>
         </div>
         <input id="menu-toggle" type="checkbox" />
@@ -29,7 +29,7 @@
         <ul class="menu">
             <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Home</a></li>
             <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">About Us</a></li>
-            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Our Services</a></li>
+            <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">What We Offer</a></li>
             <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Memberships</a></li>
             <li role="menuitem" class="navigation-item"><a href="#" class="navigation-link">Contact</a></li>
             <!--Social-->
@@ -53,46 +53,22 @@
         </div>
         <div class="header__text-container">
             <h1 class="header__title">FitnessPlex</h1>
-            <h4 class="header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid.</h2>
-                <a href="#" class="btn btn--animated btn--white btn--main">Get Started</a>
+            <h2 class="header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid.</h2>
+            <a href="#" class="btn btn--animated btn--white btn--main">Get Started</a>
+        </div>
+
     </header>
 
     <!--ABOUT SECTION-->
-
-    <section class="boxes">
-        <div class="boxes__container">
-            <div class="box-container box-container--weights">
-                <div class="box-container__content">
-                    <h3 class="box-container__title">Fitness Gyms</h3>
-                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ea
-                        sequi nobis iure quas architecto, consequatur ex rerum qui sapiente.</p>
-                </div>
-            </div>
-            <div class="box-container box-container--pool">
-                <div class="box-container__content">
-                    <h3 class="box-container__title">Swim Classes</h3>
-                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-                        maiores
-                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
-                </div>
-            </div>
-            <div class="box-container box-container--mma">
-                <div class="box-container__content">
-                    <h3 class="box-container__title">Mixed Martial Arts.</h3>
-                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-                        maiores
-                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
-                </div>
-            </div>
-            <div class="box-container box-container--yoga">
-                <div class="box-container__content">
-                    <h3 class="box-container__title">Hot Yoga</h3>
-                    <p class="box-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-                        maiores
-                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
-                </div>
-            </div>
-        </div>
+    <section class="about__text">
+        <h1 class="about__title">Our Story</h1>
+        <em>
+            <h3 class="about__subtitle">&ldquo;Changing people's lives through fitness&ldquo;</h3>
+        </em>
+        <p class="about__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate aperiam
+            qui culpa nam magni vel, quasi nobis vitae voluptates, sed quisquam labore neque dolorum fuga,
+            dignissimos soluta nisi alias officia unde. Ut perspiciatis repellendus nisi!</p>
+        <a href="#" class="about__button btn-small">Learn More</a>
     </section>
 
     <section class="about">
@@ -102,15 +78,114 @@
         </div>
     </section>
 
-    <section class="about__text">
-        <h1 class="about__title">Our Story</h1>
-        <h3 class="about__subtitle">Changing people's lives through fitness</h3>
-        <p class="about__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate aperiam
-            qui culpa nam magni vel, quasi nobis vitae voluptates, sed quisquam labore neque dolorum fuga,
-            dignissimos soluta nisi alias officia unde. Ut perspiciatis repellendus nisi!</p>
-        <a href="#" class="about__button btn-small">Learn More</a>
+    <!--Box-Title-->
+    <div class="section-titles">
+        <h3 class="section-titles__name">FitnessPlex</h3>
+        <h1 class="section-titles__main">What we offer</h1>
+        <h2 class="section-titles__sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, ut.</h2>
+    </div>
 
+    <!--WHAT WE OFFER SECTION-->
+    <section class="cards">
+        <div class="cards__container">
+            <div class="card-container card-container--weights">
+                <div class="card-container__content">
+                    <h3 class="card-container__title">Fitness Gyms</h3>
+                    <p class="card-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ea
+                        sequi nobis iure quas architecto, consequatur ex rerum qui sapiente.</p>
+                </div>
+            </div>
+            <div class="card-container card-container--pool">
+                <div class="card-container__content">
+                    <h3 class="card-container__title">Swim Classes</h3>
+                    <p class="card-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                        maiores
+                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
+                </div>
+            </div>
+            <div class="card-container card-container--mma">
+                <div class="card-container__content">
+                    <h3 class="card-container__title">Mixed Martial Arts.</h3>
+                    <p class="card-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                        maiores
+                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
+                </div>
+            </div>
+            <div class="card-container card-container--yoga">
+                <div class="card-container__content">
+                    <h3 class="card-container__title">Hot Yoga</h3>
+                    <p class="card-container__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                        maiores
+                        pariatur doloribus quaerat iusto eos consectetur molestias architecto delectus iste.</p>
+                </div>
+            </div>
+            <div class="cards-container__button">
+                <a href="#" class="btn btn--animated btn--white btn--main">More Info
+
+                </a>
+            </div>
+        </div>
     </section>
+
+    <!--Perks-Title-->
+    <div class="section-titles">
+        <h3 class="section-titles__name">FitnessPlex</h3>
+        <h1 class="section-titles__main">Why Choose Us</h1>
+        <h2 class="section-titles__sub">Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+    </div>
+
+    <!--PERKS SECTION-->
+    <section class="perks-section">
+        <div class="perks-grid">
+
+        </div>
+        <div class="perks-container">
+            <div class="perk">
+                <img src="img/locations.svg" alt="locations-icon" class="perk-img">
+
+                <h3 class="perk__title">Multiple Locations</h3>
+                <p class="perk__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ex quasi
+                    ipsam temporibus excepturi soluta rem nostrum tempora voluptas voluptatibus.</p>
+            </div>
+
+            <div class="perk">
+                <img src="img/customers.svg" alt="locations-icon" class="perk-img">
+
+                <h3 class="perk__title">10,000+ Clients</h3>
+                <p class="perk__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam architecto qui
+                    doloremque..</p>
+            </div>
+
+            <div class="perk">
+                <img src="img/support.svg" alt="locations-icon" class="perk-img">
+
+                <h3 class="perk__title">24/7 Customer Support</h3>
+                <p class="perk__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, reprehenderit
+                    unde
+                    natus quo veritatis voluptas?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="team-section__container">
+            <div class="team-section__text">
+                <h1 class="team-section__title">Why go at it alone?</h1>
+                <p class="team-section__descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dolore
+                    repellendus aspernatur voluptas cumque aperiam error recusandae corrupti ex illo dolores eos
+                    voluptatum nobis, doloribus quis tempora provident nam qui.</p>
+            </div>
+            <div class="team-section__img-container">
+                <div class="team-section__img">
+                    <img src="/img/tainer1.png" alt="trainer" class="team-img team-img--1">
+                    <img src="/img/trainer2.png" alt="trainer-2" class="team-img team-img--2">
+                    <img src="/img/trainer3.png" alt="trainer-3" class="team-img team-img--3">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
 
 

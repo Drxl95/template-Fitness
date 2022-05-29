@@ -1,0 +1,20 @@
+@use "../../layout/main_grid";
+@use "../../abstracts/variables" as var;
+@use "../../abstracts/clay_variables" as cv;
+@use "../../abstracts/mixins" as mix;
+
+@use "../../components/perk.scss";
+
+.perks-section {
+  grid-column: center-start / center-end;
+  margin-bottom: 8rem;
+  .perks-container {
+    display: grid;
+    grid-column: center-start / center-end;
+    grid-template-columns: 1fr;
+    @include mix.respond(tab-portrait) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    column-gap: 2rem;
+  }
+}

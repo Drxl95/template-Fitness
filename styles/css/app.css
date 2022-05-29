@@ -22,6 +22,7 @@
 }
 
 .top-nav {
+  position: fixed;
   grid-column: 1/-1;
   display: flex;
   flex-direction: row;
@@ -29,6 +30,9 @@
   justify-content: space-between;
   color: #fff;
   padding: 0 1rem;
+  background-color: white;
+  width: 100%;
+  z-index: 100;
 }
 .top-nav #menu-toggle ~ .menu li {
   height: 0;
@@ -59,7 +63,7 @@
 .top-nav .menu {
   position: absolute;
   top: 0;
-  margin-top: 6.5rem;
+  margin-top: 6rem;
   left: 0;
   flex-direction: column;
   width: 100%;
@@ -223,8 +227,8 @@
 .header {
   grid-column: full-start/full-end;
   font-family: "Roboto", sans-serif;
-  background-image: url("../../../../img/workout-girl.png"), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-  min-height: 70vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../img/workout-girl.png");
+  min-height: 100vh;
   background-position: center;
   background-size: cover;
 }
@@ -254,7 +258,7 @@
   }
 }
 .header__text-container {
-  margin-top: 43vh;
+  margin-top: 70vh;
   margin-left: 1rem;
 }
 .header__text-container .header__title {
@@ -275,22 +279,19 @@
   margin-bottom: 1rem;
 }
 
-img {
-  width: 66px;
-}
-
-.boxes {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
-  display: grid;
+.cards {
   grid-column: col-start/col-end 8;
+  margin-bottom: 8rem;
 }
-.boxes .boxes__container {
+.cards .cards__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 5rem;
 }
-.boxes .boxes__container .box-container {
+.cards .cards__container:nth-child(4) {
+  gap: 1rem;
+}
+.cards .cards__container .card-container {
   border-radius: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -298,49 +299,53 @@ img {
   height: 450px;
   transition: transform 150ms linear;
 }
-.boxes .boxes__container .box-container--weights {
+.cards .cards__container .card-container--weights {
   background-image: linear-gradient(328deg, rgba(168, 1, 1, 0.774) 0%, rgba(8, 8, 8, 0.541) 50%), url("../../../img/gym-coronavirus.webp");
   background-position: center;
   background-size: cover;
 }
-.boxes .boxes__container .box-container--pool {
+.cards .cards__container .card-container--pool {
   background-image: linear-gradient(328deg, rgba(12, 167, 146, 0.774) 0%, rgba(8, 8, 8, 0.541) 50%), url("../../../img/swim.jpg");
   background-position: center;
   background-size: cover;
 }
-.boxes .boxes__container .box-container--mma {
+.cards .cards__container .card-container--mma {
   background-image: linear-gradient(228deg, rgba(109, 103, 103, 0.774) 0%, rgba(34, 34, 34, 0.541) 50%), url("../../../img/mma.jpg");
   background-position: center;
   background-size: cover;
 }
-.boxes .boxes__container .box-container--yoga {
+.cards .cards__container .card-container--yoga {
   background-image: linear-gradient(298deg, rgba(182, 134, 63, 0.774) 0%, rgba(73, 61, 29, 0.589) 50%), url("../../../img/hot-yoga.webp");
   background-position: center;
   background-size: cover;
 }
-.boxes .boxes__container .box-container:hover:hover, .boxes .boxes__container .box-container:hover:focus, .boxes .boxes__container .box-container:focus:hover, .boxes .boxes__container .box-container:focus:focus {
+.cards .cards__container .card-container:hover:hover, .cards .cards__container .card-container:hover:focus, .cards .cards__container .card-container:focus:hover, .cards .cards__container .card-container:focus:focus {
   transform: translateY(-1rem) scale(1.05);
   transition: transform 150ms linear;
 }
-.boxes .boxes__container .box-container__content {
+.cards .cards__container .card-container__content {
   padding: 3rem 2rem;
   color: #fff;
 }
-.boxes .boxes__container .box-container__title {
+.cards .cards__container .card-container__title {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.boxes .boxes__container .box-container__text {
+.cards .cards__container .card-container__text {
   font-size: 1.6rem;
   font-family: "IBM Plex Sans", sans-serif;
 }
+.cards .cards__container .cards-container__button {
+  justify-self: center;
+}
 
+/*PICTURE SECTION*/
 .about {
   grid-column: 1/-1;
-  margin-bottom: 8rem;
 }
 .about__pictures {
+  margin-bottom: 8rem;
   padding: 6rem 3rem;
   background: #c91919;
   display: grid;
@@ -359,25 +364,148 @@ img {
   grid-row: 4/6;
 }
 .about__text {
-  grid-column: col-start/col-end 8;
-  margin-bottom: 8rem;
+  padding: 4rem 6rem;
+  grid-column: 1/-1;
+  background-color: rgba(201, 25, 25, 0.1);
 }
 .about__title {
   font-size: 3rem;
   font-family: "Roboto", sans-serif;
   margin-bottom: 1rem;
+  color: #54483a;
 }
 .about__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-family: "Roboto", sans-serif;
   margin-bottom: 3rem;
+  color: #c91919;
 }
 .about__description {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.6rem;
+  color: #6d5d4b;
 }
 .about__button {
   margin-top: 2rem;
+}
+
+.perk {
+  background-color: #fff;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+.perk-img {
+  width: 4.5rem;
+  margin-bottom: 1.5rem;
+  align-self: center;
+}
+.perk__title {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: #54483a;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+}
+.perk__subtitle {
+  color: #6d5d4b;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+.perks-section {
+  grid-column: center-start/center-end;
+  margin-bottom: 8rem;
+}
+.perks-section .perks-container {
+  display: grid;
+  grid-column: center-start/center-end;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .perks-section .perks-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.team-section {
+  grid-column: 1/-1;
+  background-image: linear-gradient(rgba(161, 1, 1, 0.45), rgba(161, 1, 1, 0.45)), url("../../../../img/abstract.jpg");
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.team-section__container {
+  display: flex;
+  flex-direction: column;
+}
+.team-section__text {
+  color: #fff;
+  width: 100%;
+  padding: 3rem;
+}
+.team-section__title {
+  font-size: 3rem;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.team-section__descr {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.6rem;
+}
+.team-section__img {
+  position: relative;
+}
+.team-section__img .team-img {
+  position: absolute;
+  overflow: hidden;
+}
+.team-section__img .team-img--1 {
+  width: 15rem;
+  left: 1rem;
+  bottom: -27rem;
+}
+.team-section__img .team-img--2 {
+  width: 17rem;
+  left: 20rem;
+  bottom: -27.25rem;
+}
+.team-section__img .team-img--3 {
+  width: 20rem;
+  left: 8rem;
+  top: 3rem;
+}
+
+.section-titles {
+  text-align: center;
+  grid-column: center-start/center-end;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  margin: 8rem 0;
+}
+.section-titles::after {
+  content: "";
+  display: block;
+  border: #c91919 solid 3px;
+  background-color: #c91919;
+  width: 100%;
+  max-width: 15rem;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+}
+.section-titles__name {
+  color: #c91919;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.section-titles__main {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+.section-titles__sub {
+  font-size: 1.65rem;
 }
 
 *,

@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/clay_variables" as cv;
+
+.section-titles {
+  text-align: center;
+  grid-column: center-start / center-end;
+  font-family: cv.$main-font;
+  letter-spacing: 1px;
+  margin: 8rem 0;
+  &::after {
+    content: "";
+    display: block;
+    border: cv.$main-color solid 3px;
+    background-color: cv.$main-color;
+    width: 100%;
+    max-width: 15rem;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+  }
+  &__name {
+    color: cv.$main-color;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  &__main {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__sub {
+    font-size: 1.65rem;
+  }
+}

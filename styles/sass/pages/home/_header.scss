@@ -7,12 +7,11 @@
 .header {
   grid-column: full-start / full-end;
   font-family: abs.$main-font;
-  background-image: url("../../../../img/workout-girl.png"),
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-  min-height: 70vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../../../img/workout-girl.png");
+  min-height: 100vh;
   background-position: center;
   background-size: cover;
-  // z-index: -1;
   .bg-video {
     display: none;
   }
@@ -38,7 +37,7 @@
   }
 
   &__text-container {
-    margin-top: 43vh;
+    margin-top: 70vh;
     margin-left: 1rem;
     .header__title {
       margin-bottom: 1rem;

@@ -10,7 +10,11 @@
 @use "pages/home/mobile_nav";
 @use "pages/home/header";
 @use "pages/home/about-section.scss";
+@use "pages/home/perks-section";
+@use "pages/home/team-section";
 
 @use "./components/button";
+@use "./components/section-titles";
+
 @use "./base/base";
 // @use "layout";
