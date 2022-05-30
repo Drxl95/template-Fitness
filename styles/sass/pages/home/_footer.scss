@@ -1,0 +1,72 @@
+@use "../../abstracts/clay_variables" as cv;
+@use "../../abstracts/variables" as var;
+@use "../../abstracts/mixins" as mix;
+@use "../../layout/main_grid" as grid;
+@use "../../components/button" as btn;
+
+.footer {
+  grid-column: 1 / -1;
+  background-color: cv.$main-color;
+  color: #fff;
+  .contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  &__about {
+    .about-title {
+      @include mix.sectionTitle;
+      margin-top: 2rem;
+    }
+    .about-descr {
+      font-size: var.$default-font-size;
+      font-family: cv.$secondary-font;
+    }
+  }
+  &__navigation {
+    .list-title {
+      @include mix.sectionTitle;
+      margin-top: 4rem;
+    }
+    .links-list {
+      font-size: var.$default-font-size;
+      list-style: none;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-family: cv.$main-font;
+    }
+  }
+  &__contact {
+    .newsletter-title {
+      @include mix.sectionTitle;
+    }
+    margin-top: 3rem;
+    input[type="email"],
+    input[type="submit"] {
+      border-radius: 45px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    input[type="email"] {
+      background-color: #ffffff;
+      border: solid #ffffff;
+      color: #59546a;
+    }
+
+    input[type="submit"] {
+      background-color: cv.$main-color;
+      border: solid cv.$main-color-dark;
+      color: white;
+      margin-left: -80px;
+    }
+  }
+  .copyright {
+    margin-top: 3rem;
+    text-align: center;
+    background-color: #b13737;
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}

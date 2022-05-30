@@ -231,7 +231,6 @@
 
 .header {
   grid-column: full-start/full-end;
-  font-family: "Roboto", sans-serif;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../img/workout-girl.png");
   min-height: 100vh;
   background-position: center;
@@ -240,12 +239,12 @@
 .header .bg-video {
   display: none;
 }
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
   .header {
     background-image: none;
   }
 }
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
   .header .bg-video {
     display: inherit;
     position: absolute;
@@ -270,12 +269,14 @@
   margin-bottom: 1rem;
   color: #fff;
   font-size: 4rem;
+  font-family: "Roboto", sans-serif;
 }
 .header__text-container .header__subtitle {
   color: #fff;
   font-weight: 300;
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 .header__text-container p {
   color: #fff;
@@ -513,6 +514,8 @@
 }
 .cards .cards__container .card-container__content {
   padding: 3rem 2rem;
+}
+.cards .cards__container .card-container__content--test {
   color: #54483a;
 }
 .cards .cards__container .card-container__content:hover, .cards .cards__container .card-container__content:focus p {
@@ -538,6 +541,74 @@
   font-family: "IBM Plex Sans", sans-serif;
 }
 .cards .cards__container .cards-container__button {
+  justify-self: center;
+}
+
+.footer {
+  grid-column: 1/-1;
+  background-color: #c91919;
+  color: #fff;
+}
+.footer .contents {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+}
+.footer__about .about-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.footer__about .about-descr {
+  font-size: 1.6rem;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.footer__navigation .list-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+.footer__navigation .links-list {
+  font-size: 1.6rem;
+  list-style: none;
+}
+.footer__navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+.footer__contact {
+  margin-top: 3rem;
+}
+.footer__contact .newsletter-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.footer__contact input[type=email],
+.footer__contact input[type=submit] {
+  border-radius: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.footer__contact input[type=email] {
+  background-color: #ffffff;
+  border: solid #ffffff;
+  color: #59546a;
+}
+.footer__contact input[type=submit] {
+  background-color: #c91919;
+  border: solid #a10101;
+  color: white;
+  margin-left: -80px;
+}
+.footer .copyright {
+  margin-top: 3rem;
+  text-align: center;
+  background-color: #b13737;
+  grid-column: 1/-1;
   justify-self: center;
 }
 

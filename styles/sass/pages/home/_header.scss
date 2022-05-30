@@ -6,7 +6,7 @@
 
 .header {
   grid-column: full-start / full-end;
-  font-family: abs.$main-font;
+
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../../../img/workout-girl.png");
   min-height: 100vh;
@@ -15,10 +15,10 @@
   .bg-video {
     display: none;
   }
-  @include mix.respond(tab-portrait) {
+  @include mix.respond(tab-landscape) {
     background-image: none;
   }
-  @include mix.respond(tab-portrait) {
+  @include mix.respond(tab-landscape) {
     .bg-video {
       display: inherit;
       position: absolute;
@@ -43,12 +43,14 @@
       margin-bottom: 1rem;
       color: #fff;
       font-size: 4rem;
+      font-family: abs.$main-font;
     }
     .header__subtitle {
       color: #fff;
       font-weight: 300;
       font-size: 1.5rem;
       margin-bottom: 2rem;
+      font-family: abs.$secondary-font;
     }
     p {
       color: #fff;

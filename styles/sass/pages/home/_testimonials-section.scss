@@ -33,8 +33,9 @@
 
       &__content {
         padding: 3rem 2rem;
-        color: var.$color-grey-dark-1;
-
+        &--test {
+          color: var.$color-grey-dark-1;
+        }
         &:hover,
         &:focus p {
           color: cv.$main-color !important;
