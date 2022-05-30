@@ -6,10 +6,6 @@
 .cards {
   grid-column: col-start / col-end 8;
   margin-bottom: 8rem;
-  // @media screen and (max-width: 25em) {
-  //   grid-column: full-start / full-end;
-  //   margin: 0 3rem;
-  // }
   .cards__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));

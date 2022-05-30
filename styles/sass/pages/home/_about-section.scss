@@ -1,6 +1,7 @@
 @use "../../components/about-cards";
 @use "../../abstracts/variables" as var;
 @use "../../abstracts/clay_variables" as cv;
+@use "../../abstracts/mixins" as mix;
 
 /*PICTURE SECTION*/
 .about {
@@ -33,9 +34,7 @@
     }
   }
   &__title {
-    font-size: 3rem;
-    font-family: cv.$main-font;
-    margin-bottom: 1rem;
+    @include mix.sectionTitle;
     color: var.$color-grey-dark-1;
   }
   &__subtitle {

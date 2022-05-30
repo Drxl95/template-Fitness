@@ -1,0 +1,67 @@
+@use "../../layout/main_grid";
+@use "../../abstracts/variables" as var;
+@use "../../abstracts/clay_variables" as cv;
+@use "../../abstracts/mixins" as mix;
+
+.cards {
+  grid-column: col-start / col-end 8;
+  margin-bottom: 8rem;
+  .cards__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 5rem;
+
+    .card-container {
+      border-radius: var.$border-radius;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 450px;
+      transition: all 150ms linear;
+      box-shadow: 1px 1px 9px var.$color-grey-dark-2;
+
+      @media screen and (max-width: 37.5em) {
+        &--test {
+          height: 400px;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        @include mix.hoverCard;
+      }
+
+      &__content {
+        padding: 3rem 2rem;
+        color: var.$color-grey-dark-1;
+
+        &:hover,
+        &:focus p {
+          color: cv.$main-color !important;
+          transition: all 500ms linear;
+        }
+      }
+      &__img {
+        width: 150px;
+        height: 150px;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 100%;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+      }
+      &__title {
+        font-family: cv.$main-font;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      &__text {
+        font-size: var.$default-font-size;
+        font-family: cv.$secondary-font;
+      }
+    }
+    .cards-container__button {
+      justify-self: center;
+    }
+  }
+}
