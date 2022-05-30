@@ -28,6 +28,9 @@
     padding: 4rem 6rem;
     grid-column: 1 / -1;
     background-color: rgba($color: cv.$main-color, $alpha: 0.1);
+    @media screen and (max-width: 25em) {
+      padding: 4rem;
+    }
   }
   &__title {
     font-size: 3rem;

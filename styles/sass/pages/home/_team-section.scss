@@ -1,6 +1,7 @@
 @use "../../components/about-cards";
 @use "../../abstracts/variables" as var;
 @use "../../abstracts/clay_variables" as cv;
+@use "../../abstracts/mixins" as mix;
 
 .team-section {
   grid-column: 1 / -1;
@@ -9,16 +10,17 @@
       rgba($color: cv.$main-color-dark, $alpha: 0.45)
     ),
     url("../../../../img/abstract.jpg");
-  height: 500px;
+
   background-size: cover;
   background-repeat: no-repeat;
+
+  height: 400px;
   &__container {
     display: flex;
     flex-direction: column;
   }
   &__text {
     color: #fff;
-    width: 100%;
     padding: 3rem;
   }
   &__title {
@@ -30,29 +32,31 @@
     font-family: cv.$secondary-font;
     font-size: var.$default-font-size;
   }
-  &__img-container {
-    // position: relative;
-  }
-  &__img {
-    position: relative;
+  &__img-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 
     .team-img {
-      position: absolute;
-      overflow: hidden;
       &--1 {
-        width: 15rem;
-        left: 1rem;
-        bottom: -27rem;
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        width: 12rem;
+        z-index: 20;
+        margin-top: 1rem;
       }
       &--2 {
-        width: 17rem;
-        left: 20rem;
-        bottom: -27.25rem;
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+        z-index: 10;
+        width: 12rem;
+        margin-top: -0.5rem;
       }
       &--3 {
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+        z-index: 10;
         width: 20rem;
-        left: 8rem;
-        top: 3rem;
       }
     }
   }

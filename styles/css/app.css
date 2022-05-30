@@ -20,6 +20,11 @@
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+@media screen and (max-width: 25em) {
+  .grid {
+    grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 10rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+  }
+}
 
 .top-nav {
   position: fixed;
@@ -283,12 +288,6 @@
   grid-column: col-start/col-end 8;
   margin-bottom: 8rem;
 }
-@media screen and (max-width: 25em) {
-  .cards {
-    grid-column: full-start/full-end;
-    margin: 0 3rem;
-  }
-}
 .cards .cards__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -371,6 +370,11 @@
   grid-column: 1/-1;
   background-color: rgba(201, 25, 25, 0.1);
 }
+@media screen and (max-width: 25em) {
+  .about__text {
+    padding: 4rem;
+  }
+}
 .about__title {
   font-size: 3rem;
   font-family: "Roboto", sans-serif;
@@ -436,9 +440,9 @@
 .team-section {
   grid-column: 1/-1;
   background-image: linear-gradient(rgba(161, 1, 1, 0.45), rgba(161, 1, 1, 0.45)), url("../../../../img/abstract.jpg");
-  height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
+  height: 400px;
 }
 .team-section__container {
   display: flex;
@@ -446,7 +450,6 @@
 }
 .team-section__text {
   color: #fff;
-  width: 100%;
   padding: 3rem;
 }
 .team-section__title {
@@ -458,27 +461,30 @@
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.6rem;
 }
-.team-section__img {
-  position: relative;
+.team-section__img-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }
-.team-section__img .team-img {
-  position: absolute;
-  overflow: hidden;
+.team-section__img-grid .team-img--1 {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  width: 12rem;
+  z-index: 20;
+  margin-top: 1rem;
 }
-.team-section__img .team-img--1 {
-  width: 15rem;
-  left: 1rem;
-  bottom: -27rem;
+.team-section__img-grid .team-img--2 {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  z-index: 10;
+  width: 12rem;
+  margin-top: -0.5rem;
 }
-.team-section__img .team-img--2 {
-  width: 17rem;
-  left: 20rem;
-  bottom: -27.25rem;
-}
-.team-section__img .team-img--3 {
+.team-section__img-grid .team-img--3 {
+  grid-column: 4/6;
+  grid-row: 1/2;
+  z-index: 10;
   width: 20rem;
-  left: 8rem;
-  top: 3rem;
 }
 
 .section-titles {
