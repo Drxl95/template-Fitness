@@ -1,12 +1,3 @@
-// @use "abstracts/mixins";
-// @use "abstracts/variables";
-
-// @use "base/animations";
-// @use "./base/base";
-// @use "base/utilities";
-
-// @use "layout/_main_grid";
-
 @use "pages/home/mobile_nav";
 @use "pages/home/header";
 @use "pages/home/about-section.scss";
@@ -19,4 +10,3 @@
 @use "./components/section-titles";
 
 @use "./base/base";
-// @use "layout";

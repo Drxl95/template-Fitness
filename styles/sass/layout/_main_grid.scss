@@ -1,3 +1,4 @@
+@use "../abstracts/mixins" as mix;
 .grid {
   margin: 0;
   display: grid;
@@ -7,7 +8,7 @@
       [col-start] minmax(min-content, 10rem) [col-end]
     )
     [center-end] minmax(6rem, 1fr) [full-end];
-  // grid-template-rows: 4rem 70vh repeat(5, min-content) 35vh;
+
   @media screen and (max-width: 25em) {
     grid-template-columns:
       [full-start] minmax(3rem, 1fr) [center-start] repeat(
@@ -15,5 +16,9 @@
         [col-start] minmax(min-content, 10rem) [col-end]
       )
       [center-end] minmax(3rem, 1fr) [full-end];
+  }
+
+  @include mix.respond(tab-landscape) {
+    grid-row: min-content 50vw min-content;
   }
 }

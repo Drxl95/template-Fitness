@@ -11,12 +11,20 @@
   .contents {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 3rem;
+    @include mix.respond(tab-portrait) {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    @include mix.respond(tab-landscape) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
   }
   &__about {
     .about-title {
       @include mix.sectionTitle;
-      margin-top: 2rem;
     }
     .about-descr {
       font-size: var.$default-font-size;
@@ -24,9 +32,15 @@
     }
   }
   &__navigation {
+    @include mix.respond(tab-portrait) {
+      justify-self: center;
+    }
     .list-title {
       @include mix.sectionTitle;
       margin-top: 4rem;
+      @include mix.respond(tab-portrait) {
+        margin-top: 0;
+      }
     }
     .links-list {
       font-size: var.$default-font-size;
@@ -39,9 +53,17 @@
     }
   }
   &__contact {
+    @include mix.respond(tab-portrait) {
+      margin-top: 0;
+    }
+    @include mix.respond(tab-landscape) {
+      align-self: start;
+    }
+
     .newsletter-title {
       @include mix.sectionTitle;
     }
+
     margin-top: 3rem;
     input[type="email"],
     input[type="submit"] {

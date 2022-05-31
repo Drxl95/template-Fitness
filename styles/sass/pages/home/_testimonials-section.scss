@@ -17,6 +17,9 @@
       flex-direction: column;
       justify-content: flex-end;
       height: 450px;
+      @include mix.respond(tab-landscape) {
+        height: 500px;
+      }
       transition: all 150ms linear;
       box-shadow: 1px 1px 9px var.$color-grey-dark-2;
 
@@ -35,11 +38,11 @@
         padding: 3rem 2rem;
         &--test {
           color: var.$color-grey-dark-1;
-        }
-        &:hover,
-        &:focus p {
-          color: cv.$main-color !important;
-          transition: all 500ms linear;
+          &:hover,
+          &:focus p {
+            color: cv.$main-color !important;
+            transition: all 500ms linear;
+          }
         }
       }
       &__img {
@@ -50,6 +53,10 @@
         border-radius: 100%;
         margin: 0 auto;
         margin-bottom: 5rem;
+        @include mix.respond(tab-portrait) {
+          width: 200px;
+          height: 200px;
+        }
       }
       &__title {
         font-family: cv.$main-font;
